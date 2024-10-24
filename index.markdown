@@ -5,4 +5,6 @@
 layout: default
 ---
 
-passionate about artificial intelligence, neural networks and agi. this site acts as a central hub for my work, where I share my projects, reading lists, and thoughts on ai development.  
+working on neural networks and machine learning systems, while thinking deeply about our path to agi and what comes after. 
+
+this is a space to share my work, write about what i'm learning, and explore our collective ai future. keeping track of resources that shape my understanding, from ml papers to books in history, philosophy, and economics - as we adapt to a world with artificial minds.
