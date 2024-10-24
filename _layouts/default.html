@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ site.title }}</title>
+    <style>
+        /* Base styles */
+        body {
+            font-family: "SF Mono", "Segoe UI Mono", monospace;
+            line-height: 2;
+            max-width: 40rem;  
+            margin: 4rem auto; 
+            padding: 0 1.2rem; 
+            color: #333;
+        }
+
+        /* Profile section styling */
+        .profile-section {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .profile-image {
+            width: 9rem;    
+            height: 9rem;
+            border-radius: 50%;
+        }
+
+        .profile-info {
+            flex-grow: 1;
+        }
+
+        /* Header group styling */
+        header {
+            margin-bottom: 65px;
+            text-align: left;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin: 0;
+            font-weight: normal;
+        }
+
+        .role {
+            color: #666;
+            margin: 5px 0 20px 0;
+            font-size: 1em;
+        }
+
+        /* Navigation styling */
+        nav a {
+            color: #666;
+            text-decoration: none;
+            margin-right: 20px;
+            font-size: 1em;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 0px;  /* Reduced from previous value */
+            line-height: 1.2;    /* Added to bring line closer */
+        }
+        
+        nav a:hover {
+            border-bottom: 1px solid #666;
+            text-decoration: none;
+        }
+        
+        nav a:hover {
+            border-bottom: 1px solid #666;
+            text-decoration: none;  /* Remove default underline */
+        }
+
+        /* Divider styling */
+        .divider {
+            border: none;
+            border-top: 1px solid #eee;
+            margin: 1.5rem 0 1rem 0;  /* Reduced bottom margin */
+        }
+        
+        main {
+            margin-top: -2rem;  /* Pull content up closer to divider */
+            font-size: 1.0rem;
+            line-height: 1.5;
+            color: #444;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="profile-section">
+            <img src="/assets/images/pic.jpg" alt="Profile" class="profile-image">
+            <div class="profile-info">
+                <h1>> flux</h1>
+                <p class="role">ai graduate • developer</p>
+                
+                <nav>
+                    <a href="/">home</a>
+                    <a href="/blog">blog</a>
+                    <a href="https://github.com/fluxstack">github</a>
+                    <a href="https://x.com/yourusername">X</a>
+                </nav>
+            </div>
+        </div>
+
+        <hr class="divider">
+    </header>
+
+    <main>
+        {{ content }}
+    </main>
+</body>
+</html>
