@@ -18,7 +18,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: > flux
+title: flux
 email: flux@example.com
 description: >- # this means to ignore newlines until "baseurl:"
   I am an AI graduate passionate about artificial intelligence, neural networks and AGI. This site acts as a central hub for my work, where I share my projects, reading lists, and thoughts on AI development.  
