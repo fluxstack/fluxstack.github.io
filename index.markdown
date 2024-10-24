@@ -5,6 +5,4 @@
 layout: default
 ---
 
-ai graduate 
-
-I am an AI graduate passionate about artificial intelligence, neural networks and AGI. This site acts as a central hub for my work, where I share my projects, reading lists, and thoughts on AI development.  
+passionate about artificial intelligence, neural networks and agi. this site acts as a central hub for my work, where I share my projects, reading lists, and thoughts on ai development.  
