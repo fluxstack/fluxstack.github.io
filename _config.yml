@@ -23,7 +23,7 @@ email: rem@example.com
 description: >- # this means to ignore newlines until "baseurl:"
   AI graduate exploring neural networks, machine learning systems, and our path to AGI"  
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://rem.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://remstate.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: remstack
 github_username: remstate
 
