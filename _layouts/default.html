@@ -3,86 +3,188 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{ site.description }}">
     <title>{{ site.title }}</title>
     <style>
         /* Base styles */
         body {
-            font-family: "SF Mono", "Segoe UI Mono", monospace;
+            font-family: "JetBrains Mono", "SF Mono", "Segoe UI Mono", monospace;
+            font-weight: 450;
             line-height: 2;
-            max-width: 40rem;  
-            margin: 4rem auto; 
-            padding: 0 1.2rem; 
+            max-width: 44rem;
+            margin: 6rem auto;
+            padding: 0 1.2rem;
             color: #333;
+            background-color: #f7f7f7;
         }
 
         /* Profile section styling */
         .profile-section {
             display: flex;
             align-items: center;
-            gap: 1.5rem;
+            gap: 2rem;
         }
 
         .profile-image {
-            width: 9rem;    
-            height: 9rem;
+            width: 11rem;
+            height: 11rem;
             border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #fff;  /* Slightly thicker white border */
+            box-shadow: 
+                0 0 0 1px rgba(0, 0, 0, 0.08),  /* Slightly stronger border */
+                0 4px 14px rgba(0, 0, 0, 0.12);   /* Slightly stronger shadow */
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .profile-image:hover {
+            transform: translateY(-2px);
+            box-shadow: 
+                0 0 0 1px rgba(0, 0, 0, 0.05),
+                0 6px 16px rgba(0, 0, 0, 0.12);
         }
 
         .profile-info {
             flex-grow: 1;
         }
 
-        /* Header group styling */
+        /* Header styling */
         header {
-            margin-bottom: 65px;
+            margin-bottom: 3rem;
             text-align: left;
         }
 
         h1 {
-            font-size: 2.5em;
+            font-size: 3em;
             margin: 0;
-            font-weight: normal;
+            font-weight: 500;
         }
 
         .role {
             color: #666;
-            margin: 5px 0 20px 0;
-            font-size: 1em;
+            margin: 0.3rem 0 1.2rem 0;  /* Reduced bottom margin from 1.5rem to 1.2rem */
+            font-size: 1.2em;
+            font-weight: 450;
         }
 
         /* Navigation styling */
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
         nav a {
             color: #666;
             text-decoration: none;
-            margin-right: 20px;
-            font-size: 1em;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 0px;  /* Reduced from previous value */
-            line-height: 1.2;    /* Added to bring line closer */
+            font-size: 1.05em;  /* Reduced from 1.2em */
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 1px;
+            transition: border-color 0.2s ease;
+            line-height: 1;
+            font-weight: 450;
         }
-        
+       
         nav a:hover {
             border-bottom: 1px solid #666;
-            text-decoration: none;
         }
-        
-        nav a:hover {
-            border-bottom: 1px solid #666;
-            text-decoration: none;  /* Remove default underline */
+
+        nav a[aria-current="page"] {
+            border-bottom: 1px solid #333;
+            color: #333;
         }
 
         /* Divider styling */
         .divider {
             border: none;
-            border-top: 1px solid #eee;
-            margin: 1.5rem 0 1rem 0;  /* Reduced bottom margin */
+            border-top: 1px solid #ddd;
+            margin: 2rem 0 1.5rem 0;
         }
-        
+       
         main {
-            margin-top: -2rem;  /* Pull content up closer to divider */
-            font-size: 1.0rem;
-            line-height: 1.5;
-            color: #444;
+            margin-top: -1rem;
+            font-size: 1.2rem;
+            line-height: 1.6;
+            color: #666;
+            font-weight: 450;
+        }
+
+        /* Currently Reading section */
+        .currently-reading {
+            margin-top: 2.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #ddd;
+        }
+
+        .currently-reading h2 {
+            font-size: 1.5em;
+            font-weight: 500;  /* Slightly bolder */
+            color: #555;      /* Darker than before */
+            margin: 0 0 1rem 0;
+        }
+
+        .book-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .book {
+            display: flex;
+            align-items: baseline;
+            gap: 0.5rem;
+            color: #666;
+        }
+
+        .book-title {
+            color: #444;     /* Slightly darker */
+            font-weight: 450; /* Slightly bolder */
+        }
+
+        .book-author {
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 600px) {
+            body {
+                margin: 3rem auto;
+                padding: 0 1rem;
+            }
+
+            .profile-section {
+                flex-direction: column;
+                text-align: center;
+                gap: 1.5rem;
+            }
+
+            .profile-image {
+                width: 9rem;
+                height: 9rem;
+            }
+
+            h1 {
+                font-size: 2.5em;
+            }
+
+            nav {
+                justify-content: center;
+            }
+
+            .role {
+                font-size: 1.1em;
+            }
+
+            nav a {
+                font-size: 1.1em;
+            }
+
+            .book {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.25rem;
+            }
         }
     </style>
 </head>
@@ -91,23 +193,35 @@
         <div class="profile-section">
             <img src="/assets/images/pic.jpg" alt="Profile" class="profile-image">
             <div class="profile-info">
-                <h1>> rem</h1>
+                <h1>> robbie</h1>
                 <p class="role">ai graduate • developer</p>
-                
+               
                 <nav>
-                    <a href="/">home</a>
-                    <a href="/blog">blog</a>
+                    <a href="/" {% if page.url == "/" %}aria-current="page"{% endif %}>home</a>
+                    <a href="/reading list" {% if page.url == "/reading list/" %}aria-current="page"{% endif %}>reading</a>
                     <a href="https://github.com/remstate">github</a>
                     <a href="https://x.com/remstack">X</a>
                 </nav>
             </div>
         </div>
-
         <hr class="divider">
     </header>
-
     <main>
         {{ content }}
+        
+        <div class="currently-reading">
+            <h2>> currently reading</h2>
+            <div class="book-list">
+                <div class="book">
+                    <span class="book-title">fundamentals of data engineering</span>
+                    <span class="book-author">joe reis & matt housley</span>
+                </div>
+                <div class="book">
+                    <span class="book-title">co-intelligence: living and working with ai</span>
+                    <span class="book-author">ethan mollick</span>
+                </div>
+            </div>
+        </div>
     </main>
 </body>
 </html>
