@@ -18,14 +18,14 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: flux
-email: flux@example.com
+title: rem
+email: rem@example.com
 description: >- # this means to ignore newlines until "baseurl:"
-  I am an AI graduate passionate about artificial intelligence, neural networks and AGI. This site acts as a central hub for my work, where I share my projects, reading lists, and thoughts on AI development.  
+  AI graduate exploring neural networks, machine learning systems, and our path to AGI"  
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://fluxstack.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: mlflux
-github_username:  fluxstack
+url: "https://rem.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+twitter_username: remstack
+github_username: remstate
 
 # Exclude from processing.
 # The following items will not be processed, by default.
